@@ -1,0 +1,172 @@
+/* Importing fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+/* Global styles */
+body {
+  line-height: 1.2;
+}
+
+/* Layout styles */
+section {
+  margin-left: 35%; /* Adjusting section margin */
+}
+
+#container {
+  position: relative;
+}
+
+img {
+  position: absolute;
+  width: 30%; /* Adjusting image width */
+  height: 50%; /* Adjusting image height */
+  top: 14.8%;
+  left: 0;
+}
+
+figcaption {
+  position: absolute;
+  bottom: 90%;
+  left: 0;
+  top: 60%; /* Adjusting figcaption top position */
+  padding: 2px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Styles for the aside element */
+.aside {
+  padding: 10px;
+  margin-left: 2%;
+  border: 4px solid pink;
+  top: 70%; /* Adjusting aside top position */
+  left: 0;
+  right: 70%;
+  position: absolute;
+  line-height: 1.5;
+}
+
+/* Heading styles */
+h1 {
+  text-align: center;
+  font-size: 6rem;
+  text-transform: lowercase;
+  color: orangered;
+}
+
+h1 + p {
+  text-align: left;
+}
+
+/* Paragraph styles */
+p {
+  font-family: "Lora", serif; /* Setting font family for paragraphs */
+}
+
+/* Heading 2 styles */
+h2 {
+  text-transform: lowercase;
+  font-size: 3em;
+  font-family: "Ubuntu", sans-serif; /* Setting font family for h2 */
+}
+
+/* Pseudo-element styles for h2 */
+h2:not(.aside > h2)::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20px;
+  background-color: #333;
+}
+
+/* Custom background colors for h2 */
+section:nth-of-type(1) h2::before {
+  background-color: green;
+}
+
+section:nth-of-type(2) h2::before {
+  background-color: palevioletred;
+}
+
+section:nth-of-type(3) h2::before {
+  background-color: aqua;
+}
+
+/* Custom color for h3 based on section */
+section:nth-of-type(1) h3 {
+  color: green;
+}
+
+section:nth-of-type(2) h3 {
+  color: palevioletred;
+}
+
+section:nth-of-type(3) h3 {
+  color: aqua;
+}
+
+/* Footer styles */
+footer {
+  text-align: end;
+}
+
+/* Heading 3 styles */
+h3 {
+  margin-right: 10px;
+  font-family: "Karla", sans-serif; /* Setting font family for h3 */
+}
+
+/* List item styles */
+li[value="11"],
+li[value="12"],
+li[value="16"],
+li[value="20"],
+li[value="26"],
+li[value="31"],
+li[value="32"],
+li[value="36"],
+li[value="47"],
+li[value="49"],
+li[value="54"],
+li[value="55"],
+li[value="56"],
+li[value="68"],
+li[value="72"],
+li[value="76"] {
+  display: flex;
+  align-items: center;
+}
+
+/* Adding list item numbering */
+li[value="11"]::before,
+li[value="12"]::before,
+li[value="16"]::before,
+li[value="20"]::before,
+li[value="26"]::before,
+li[value="31"]::before,
+li[value="32"]::before,
+li[value="36"]::before,
+li[value="47"]::before,
+li[value="49"]::before,
+li[value="54"]::before,
+li[value="55"]::before,
+li[value="56"]::before,
+li[value="68"]::before,
+li[value="72"]::before,
+li[value="76"]::before {
+  counter-increment: list;
+  content: attr(value) ". ";
+  margin-right: 4px; /* Adjust spacing */
+}
+
+/* Overriding list item styles for the aside element */
+.aside li {
+  display: list-item;
+}
+
+/* Resetting list item numbering for specific items */
+.aside li[value="76"]::before,
+.aside li[value="56"]::before {
+  all: initial;
+}
